@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
@@ -93,7 +94,7 @@ public class ItemStackSerializer {
 
     private static String getOwner(ItemStack item) {
         if (!(item.getItemMeta() instanceof SkullMeta)) return null;
-        return ((SkullMeta) item.getItemMeta()).getOwner();
+        return ((SkullMeta) item.getItemMeta()).getOwningPlayer().getName();
     }
 
     private static void setOwner(ItemStack item, String owner) {
